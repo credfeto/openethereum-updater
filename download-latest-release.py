@@ -60,7 +60,7 @@ def fetch_releases(oauth_token):
 
         for artifact in release["releaseAssets"]["nodes"]:
             artifact_name = artifact["name"]
-            if not artifact_name.startswith("openethereum-windows-"):
+            if not artifact_name.startswith("openethereum-windows-v"):
                 continue
             if not artifact_name.endswith(".zip"):
                 continue
@@ -76,9 +76,15 @@ def fetch_releases(oauth_token):
 
 def download(release):
     name = release["name"]
+    artifact_name = release["artifact_name"]
+    if artifact_name.startswith("openethereum-windows-v"):
+      artifact_name = artifact_name[23:]
+    if artifact_name.endswith(".zip"):
+      artifact_name = artifact_name[-4:]
+
     url = release["download"]
 
-    package_filename = "openethereum.windows." + release["name"] + ".zip"
+    package_filename = "openethereum.windows." + artifact_name + ".zip"
 
     filename = root / package_filename
 
