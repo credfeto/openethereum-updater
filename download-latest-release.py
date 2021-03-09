@@ -78,7 +78,7 @@ def download(release):
     name = release["name"]
     artifact_name = release["artifact_name"]
     if artifact_name.startswith("openethereum-windows-v"):
-      artifact_name = artifact_name[23:]
+      artifact_name = artifact_name[22:]
     if artifact_name.endswith(".zip"):
       artifact_name = artifact_name[:-4]
 
