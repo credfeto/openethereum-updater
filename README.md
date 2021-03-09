@@ -1,2 +1,2 @@
-# cs-template
-C# Template
+# openethereum-updater
+Updater of OpenEthereum
