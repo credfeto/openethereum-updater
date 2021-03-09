@@ -80,7 +80,7 @@ def download(release):
     if artifact_name.startswith("openethereum-windows-v"):
       artifact_name = artifact_name[23:]
     if artifact_name.endswith(".zip"):
-      artifact_name = artifact_name[-4:]
+      artifact_name = artifact_name[:-4]
 
     url = release["download"]
 
