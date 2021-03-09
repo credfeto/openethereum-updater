@@ -55,7 +55,7 @@ def fetch_releases(oauth_token):
         if release["isPrerelease"]:
             continue
 
-        release_name = release["name"][1:]
+        release_name = release["name"]
         print(release_name)
 
         for artifact in release["releaseAssets"]["nodes"]:
